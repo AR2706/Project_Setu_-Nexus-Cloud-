@@ -1,0 +1,13 @@
+{
+  "name": "nexus-enterprise",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:brain": "npm run start --workspace=packages/control-plane",
+    "start:muscle": "npm run start --workspace=packages/compute-node",
+    "test": "npm test --workspaces"
+  }
+}
