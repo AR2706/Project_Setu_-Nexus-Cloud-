@@ -9,9 +9,9 @@ app.use(express.json());
 app.use(morgan('dev')); // Logs requests
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Nexus Control Plane is Online' });
+  res.json({ message: 'Nexus Control Plane is Online' });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
