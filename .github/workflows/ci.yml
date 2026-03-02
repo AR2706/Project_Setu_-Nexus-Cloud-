@@ -3,9 +3,9 @@ name: Nexus CI Pipeline
 # Trigger this workflow on every push to the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   quality-assurance:
