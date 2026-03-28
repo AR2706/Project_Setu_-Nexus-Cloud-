@@ -17,18 +17,18 @@ const getSystemStats = async () => {
     resources: {
       cpuCount: cpu.cores,
       totalMem: mem.total,
-      freeMem: mem.free
-    }
+      freeMem: mem.free,
+    },
   };
 };
 
 socket.on('connect', async () => {
   const stats = await getSystemStats();
-  
+
   socket.emit('register-node', {
     nodeId,
     hostname: stats.hostname,
-    resources: stats.resources
+    resources: stats.resources,
   });
 });
 
@@ -37,7 +37,7 @@ socket.on('registration-success', () => {
     const stats = await getSystemStats();
     socket.emit('heartbeat', {
       nodeId,
-      resources: stats.resources
+      resources: stats.resources,
     });
   }, 10000);
 });

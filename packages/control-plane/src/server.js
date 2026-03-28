@@ -10,7 +10,7 @@ const Node = require('./models/Node');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: '*' }
+  cors: { origin: '*' },
 });
 
 const PORT = process.env.PORT || 8000;
@@ -25,7 +25,7 @@ app.use('/api/v1/auth', authRoutes);
 io.on('connection', (socket) => {
   socket.on('register-node', async (data) => {
     const { nodeId, hostname, resources } = data;
-    
+
     await Node.findOneAndUpdate(
       { nodeId },
       { hostname, status: 'online', resources, lastHeartbeat: Date.now() },
@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
 
   socket.on('heartbeat', async (data) => {
     const { nodeId, resources } = data;
-    
+
     await Node.findOneAndUpdate(
       { nodeId },
       { resources, status: 'online', lastHeartbeat: Date.now() },
@@ -47,10 +47,8 @@ io.on('connection', (socket) => {
   });
 });
 
-
 app.get('/', (req, res) => {
-    res.json({ message: 'Nexus Control Plane is Online' });
+  res.json({ message: 'Nexus Control Plane is Online' });
 });
 
-server.listen(PORT, () => {
-});
+server.listen(PORT, () => {});

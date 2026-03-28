@@ -5,14 +5,13 @@
   "workspaces": [
     "packages/*"
   ],
-    "scripts": {
+  "scripts": {
     "start:brain": "npm run start --workspace=packages/control-plane",
     "start:muscle": "npm run start --workspace=packages/compute-node",
     "test": "npm test --workspaces",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
-
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.0.2",

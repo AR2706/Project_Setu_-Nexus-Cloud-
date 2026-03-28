@@ -7,9 +7,9 @@ const NodeSchema = new mongoose.Schema({
   resources: {
     cpuCount: Number,
     totalMem: Number,
-    freeMem: Number
+    freeMem: Number,
   },
-  lastHeartbeat: { type: Date, default: Date.now }
+  lastHeartbeat: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Node', NodeSchema);
