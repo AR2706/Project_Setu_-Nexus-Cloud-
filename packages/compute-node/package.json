@@ -1,0 +1,16 @@
+{
+  "name": "compute-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/agent.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "socket.io-client": "^4.8.3",
+    "systeminformation": "^5.31.5"
+  }
+}
